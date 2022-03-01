@@ -9,27 +9,36 @@
     <title>assignment</title>
 </head>
 <body>
-    <!-- <div id="card-container">
-        <button>
-            click me 
-        </button>
-    </div> -->
 
     <div class="container">
-      <div class="row">
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-       
-            <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
+      <header class="header d-flex justify-content-between my-3 align-items-center">
+        <h1 class='fs-3 text-capitalize'>phone hunter</h1>
+  
+        <div class="input-group w-50">
+          <input id="search-field" type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+          <button onclick="loadApiData()" type="button " class="btn btn-primary text-light btn-outline-secondary">Action</button>
+  
+          </button>
+        </div>
+
+        <div>
+          <p id="error-message" class=" text-danger">Something went wrong please try again later</p>
       </div>
+      </header>
+      
+<!-- =========== product-details start ======== -->
+
+      <div id="product-details" class=" w-50 mx-auto">
+      </div>
+   <!-- =========== product-details end ======== -->
+<!-- =========== product-details start ======== -->
+      <div id="feature-details" class=" w-50 mx-auto">
+      </div>
+   <!-- =========== feature-details end ======== -->
+       <!-- meal search result -->
+    <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
+    </div>
+
     </div>
     
 

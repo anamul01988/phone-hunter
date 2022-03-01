@@ -1,7 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700;900&display=swap');
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif; */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;;
+}
+ .header{
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+} 
 img.card-img-top {
     height: 203px;
     width: 152px;
 }
 button.bg-primary.text-light {
-    padding: 10px 100px;
+    padding: 10px 71px;
 }
+.card.d-flex.flex-direction-column.align-items-center.justify-content-center.my-3 {
+    height: 400px;
+}
+.card{
+    margin-bottom: 20px;
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+ }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+ }
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    #product-details{
+        /* width: 50%;
+        text-align:center; */
+    }
+ }

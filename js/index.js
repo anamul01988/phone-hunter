@@ -1,8 +1,15 @@
 document.getElementById('error-message').style.display = 'none';
+const spinner = displaySpinner =>{
+    document.getElementById('spinner').style.display = displaySpinner;
+}
+// const displaySearchedResult = result =>{
+//     document.getElementById('search-result').style.display = result;
+// }
 const loadApiData = data =>{
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     searchField.value = '';
+    spinner('block');
     document.getElementById('error-message').style.display = 'none';
     if (searchText == '') {
         // please write something to display
@@ -24,11 +31,18 @@ const displayError = error => {
     document.getElementById('error-message').style.display = 'block';
 }
 const displaySearchResult = products => {
+    console.log(products.length)
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
     if (products.length == 0) {
         document.getElementById('error-message').style.display = 'block';
     }
+    // else if (products.length>0 || products.length > 20){
+    //     for(let i = 0; i<20; i++){
+          
+    //     }
+    // }
+    
     products.forEach(product => {
         console.log(product);
         const div = document.createElement('div');
@@ -44,7 +58,8 @@ const displaySearchResult = products => {
         </div>
         `;
         searchResult.appendChild(div);
-    })
+    });
+    spinner('none');
 }
 
 
@@ -78,24 +93,8 @@ const displayproductDetail = product => {
     productDetails.appendChild(div);
     // productDetails.appendChild("");
 
+
 }
 
-{/* <button onclick="featuresDetail('${product.mainFeatures}')" class="btn btn-primary">Go Feature</button> */}
-
-
-// const featuresDetail = details =>{
-//     console.log(details)
-//     const featureDetails = document.getElementById('feature-details');
-//     const div = document.createElement('div');
-//     div.classList.add('card');
-//     div.innerHTML = `
-//         <h5 class="card-title">${details.name}</h5>
-//         <p class="card-text">${details.chipSet}</p>
-//         <p class="card-text">${details.displaySize}</p>
-//         <p class="card-text">${details.memory}</p>
-//     </div>
-//     `;
-//     featureDetails.appendChild(div);
-// }
 
 

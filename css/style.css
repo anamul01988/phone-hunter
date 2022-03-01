@@ -26,6 +26,9 @@ button.bg-primary.text-light {
 .card{
     margin-bottom: 20px;
 }
+#spinner{
+    display: none;
+}
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 

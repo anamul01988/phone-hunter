@@ -1,31 +1,33 @@
 document.getElementById('error-message').style.display = 'none';
+
+// let isLoading = false;
+
 const spinner = displaySpinner =>{
     document.getElementById('spinner').style.display = displaySpinner;
 }
-// const displaySearchedResult = result =>{
-//     document.getElementById('search-result').style.display = result;
-// }
+const displayResult = result =>{
+    document.getElementById('search-result').style.display = result;
+}
+// document.getElementById('search-result').style.display = 'none';
 const loadApiData = data =>{
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     searchField.value = '';
     spinner('block');
+    // displayResult('none');
     document.getElementById('error-message').style.display = 'none';
     if (searchText == '') {
-        // please write something to display
-  
         document.getElementById('error-message').style.display = 'block';
-
     }
     else {
+    
         const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
         console.log(url)
         fetch(url)
             .then(res => res.json())
             .then(data => displaySearchResult(data.data))
-            // .then(data => console.log(data.data))
-            // .catch(error => displayError(error));
     }
+
 }
 const displayError = error => {
     document.getElementById('error-message').style.display = 'block';
@@ -37,13 +39,8 @@ const displaySearchResult = products => {
     if (products.length == 0) {
         document.getElementById('error-message').style.display = 'block';
     }
-    // else if (products.length>0 || products.length > 20){
-    //     for(let i = 0; i<20; i++){
-          
-    //     }
-    // }
     
-    products.forEach(product => {
+    products.slice(0,20).forEach(product => {
         console.log(product);
         const div = document.createElement('div');
         div.classList.add('col');
@@ -60,6 +57,8 @@ const displaySearchResult = products => {
         searchResult.appendChild(div);
     });
     spinner('none');
+    // displayResult('block');
+  
 }
 
 
@@ -91,7 +90,6 @@ const displayproductDetail = product => {
     </div>
     `;
     productDetails.appendChild(div);
-    // productDetails.appendChild("");
 
 
 }

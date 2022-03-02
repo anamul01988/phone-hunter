@@ -1,7 +1,4 @@
 document.getElementById('error-message').style.display = 'none';
-
-// let isLoading = false;
-
 const spinner = displaySpinner =>{
     document.getElementById('spinner').style.display = displaySpinner;
 }
@@ -67,15 +64,22 @@ const displaySearchResult = products => {
 
 const loadProductDetail = id => {
     console.log(id)
+    const productDetails = document.getElementById('product-details');
+    productDetails.textContent = '';  //refresh the previous result
     const url = `https://openapi.programming-hero.com/api/phone/${id}`;
     fetch(url)
         .then(res => res.json())
         .then(data => displayproductDetail(data.data));
-//         .then(data => console.log(data.data));
   }
 
 const displayproductDetail = product => {
     console.log(product);
+    window.scroll({
+        top: 100,
+        left: 100,
+        behavior: 'smooth'
+      });
+      scroll(0, 100);
     const productDetails = document.getElementById('product-details');
     const div = document.createElement('div');
     div.classList.add('card');

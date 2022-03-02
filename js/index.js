@@ -77,14 +77,29 @@ const displayproductDetail = product => {
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
-    <div class="d-flex flex-column align-items-center justify-content-center my-3">
+    <div class="d-flex flex-column align-items-center justify-content-center my-3 ">
     <img src="${product.image}" class="card-img-top" alt="...">
     <div class="card-body">
         <h5 class="card-title">${product.releaseDate ? product.releaseDate : 'Release date is not available'}</h5>
         <p class="card-text">${product.name}</p>
+        <h5>Main-Features are: </h5>
         <p class="card-text">${product.mainFeatures.chipSet}</p>
         <p class="card-text">${product.mainFeatures.displaySize}</p>
         <p class="card-text">${product.mainFeatures.memory}</p>
+        <p class="card-text">${product.mainFeatures.storage}</p>
+        <p class="card-text">${product.mainFeatures.sensors[0]}</p>
+        <p class="card-text">${product.mainFeatures.sensors[1]}</p>
+        <p class="card-text">${product.mainFeatures.sensors[2]}</p>
+        <p class="card-text">${product.mainFeatures.sensors[3]}</p>
+        <p class="card-text">${product.mainFeatures.sensors[4]}</p>
+        <p class="card-text">${product.mainFeatures.sensors[5]}</p>
+        <h5>Others are: </h5>
+        <p class="card-text">${product.others.WLAN}</p>
+        <p class="card-text">${product.others.Bluetooth}</p>
+        <p class="card-text">${product.others.GPS}</p>
+        <p class="card-text">NFC: ${product.others.NFC}</p>
+        <p class="card-text">Radio: ${product.others.Radio}</p>
+        <p class="card-text">${product.others.USB}</p>
   
     </div>
     </div>

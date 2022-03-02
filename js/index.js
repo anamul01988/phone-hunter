@@ -97,12 +97,12 @@ const displayproductDetail = product => {
         <p class="card-text">${product.mainFeatures.sensors[4]}</p>
         <p class="card-text">${product.mainFeatures.sensors[5]}</p>
         <h5>Others are: </h5>
-        <p class="card-text">${product.others.WLAN}</p>
-        <p class="card-text">${product.others.Bluetooth}</p>
-        <p class="card-text">${product.others.GPS}</p>
-        <p class="card-text">NFC: ${product.others.NFC}</p>
-        <p class="card-text">Radio: ${product.others.Radio}</p>
-        <p class="card-text">${product.others.USB}</p>
+        <p class="card-text">${product.others?.WLAN ?? 'items will be released soon.'}</p>
+        <p class="card-text">${product.others?.Bluetooth ?? 'items will be released soon.'}</p>
+        <p class="card-text">${product.others?.GPS ?? 'items will be released soon.'}</p>
+        <p class="card-text">NFC: ${product.others?.NFC ?? 'items will be released soon.'}</p>
+        <p class="card-text">Radio: ${product.others?.Radio ?? 'items will be released soon.'}</p>
+        <p class="card-text">${product.others?.USB ?? 'items will be released soon.'}</p>
   
     </div>
     </div>

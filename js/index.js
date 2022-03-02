@@ -13,6 +13,8 @@ const loadApiData = data =>{
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     searchField.value = '';
+    const productDetails = document.getElementById('product-details');
+    productDetails.textContent = '';
     spinner('block');
     // displayResult('none');
     document.getElementById('error-message').style.display = 'none';
@@ -36,6 +38,7 @@ const displaySearchResult = products => {
     console.log(products.length)
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
+    
     if (products.length == 0) {
         document.getElementById('error-message').style.display = 'block';
     }
